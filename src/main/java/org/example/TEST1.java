@@ -35,7 +35,7 @@ public class TEST1 {
 
         var wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.invisibilityOfElementLocated(new By.ByXPath("/descendant::div[@class='ajax-loading-block-window']")));
-        var wishlistbutton = wait.until(ExpectedConditions.elementToBeClickable(new By.ByXPath("/descendant::input[contains(@class,'add-to-wishlist')]")));;
+        var wishlistbutton = wait.until(ExpectedConditions.elementToBeClickable(new By.ByXPath("/descendant::input[contains(@class,'add-to-wishlist')]")));
         wishlistbutton.click();
 
         var jewelry = driver.findElement(new By.ByXPath("/descendant::div[@class='listbox']/descendant::a[@href='/jewelry']"));
