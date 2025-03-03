@@ -159,7 +159,7 @@ public class TEST3 {
         var end = driver.findElement(new By.ByXPath("/descendant::div[@class='section order-completed']/descendant::div[@class='title']/descendant::strong"));
 
 
-        Assertions.assertEquals("Your order has been successfully processed!", end.getText());
+        Assertions.assertEquals("Your order has been successfully processed!", end.getText(), "testas praejo gerai");
 
     }
 
