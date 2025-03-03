@@ -160,6 +160,9 @@ public class TEST3 {
 
 
         Assertions.assertEquals("Your order has been successfully processed!", end.getText(), "testas praejo gerai");
+        if(end.getText().equals("Your order has been successfully processed!")){
+            System.out.println("testas praejo gerai");
+        }
 
     }
 
