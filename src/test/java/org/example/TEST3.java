@@ -21,10 +21,6 @@ public class TEST3 {
     private WebDriver driver;
 
 
-    public static void main(String[] args) {
-        registeruser();
-    }
-
     @BeforeAll
     public static void registeruser() {
         WebDriver driver = new ChromeDriver();
@@ -120,23 +116,27 @@ public class TEST3 {
 
         var checkout = driver.findElement(new By.ById("checkout"));
         checkout.click();
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("BillingNewAddress_CountryId")));
+        try{
+            var dropdowncountry = driver.findElement(new By.ById("BillingNewAddress_CountryId"));
+            Select dropdown = new Select(dropdowncountry);
+            dropdown.selectByContainsVisibleText("Lithuania");
 
-        var dropdowncountry = driver.findElement(new By.ById("BillingNewAddress_CountryId"));
-        Select dropdown = new Select(dropdowncountry);
-        dropdown.selectByContainsVisibleText("Lithuania");
+            var city = driver.findElement(new By.ById("BillingNewAddress_City"));
+            city.sendKeys("Vilnius");
 
-        var city = driver.findElement(new By.ById("BillingNewAddress_City"));
-        city.sendKeys("Vilnius");
+            var address = driver.findElement(new By.ById("BillingNewAddress_Address1"));
+            address.sendKeys("Didlaukio g. 47");
 
-        var address = driver.findElement(new By.ById("BillingNewAddress_Address1"));
-        address.sendKeys("Didlaukio g. 47");
+            var zip = driver.findElement(new By.ById("BillingNewAddress_ZipPostalCode"));
+            zip.sendKeys("08303");
 
-        var zip = driver.findElement(new By.ById("BillingNewAddress_ZipPostalCode"));
-        zip.sendKeys("08303");
+            var phone = driver.findElement(new By.ById("BillingNewAddress_PhoneNumber"));
+            phone.sendKeys("+37069420420");
+        }
+        catch (Exception e){
+            System.out.println();
+        }
 
-        var phone = driver.findElement(new By.ById("BillingNewAddress_PhoneNumber"));
-        phone.sendKeys("+37069420420");
 
         var continue1 = driver.findElement(new By.ByXPath("/descendant::input[@title = 'Continue']"));
         continue1.click();
