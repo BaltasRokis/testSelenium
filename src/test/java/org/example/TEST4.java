@@ -24,25 +24,33 @@ public class TEST4 {
         var addtocompare = driver.findElement(By.xpath("/descendant::input[@class='button-2 add-to-compare-list-button']"));
         addtocompare.click();
 
-        books.click();
-        var book2 = driver.findElement(By.xpath("/descendant::h2/descendant::a[@href='/copy-of-computing-and-internet']"));
+        var booksnew = driver.findElement(By.xpath("/descendant::div[@class='header-menu']/descendant::a[@href='/books']"));
+        booksnew.click();
+        var book2 = driver.findElement(By.xpath("/descendant::h2/descendant::a[@href='/science']"));
         book2.click();
-        addtocompare.click();
+        var addtocompare1 = driver.findElement(By.xpath("/descendant::input[@class='button-2 add-to-compare-list-button']"));
+        addtocompare1.click();
 
-        books.click();
+        var booksnew1 = driver.findElement(By.xpath("/descendant::div[@class='header-menu']/descendant::a[@href='/books']"));
+        booksnew1.click();
         var book3 = driver.findElement(By.xpath("/descendant::h2/descendant::a[@href='/fiction']"));
         book3.click();
-        addtocompare.click();
+        var addtocompare2 = driver.findElement(By.xpath("/descendant::input[@class='button-2 add-to-compare-list-button']"));
+        addtocompare2.click();
 
-        books.click();
+        var booksnew2 = driver.findElement(By.xpath("/descendant::div[@class='header-menu']/descendant::a[@href='/books']"));
+        booksnew2.click();
         var book4 = driver.findElement(By.xpath("/descendant::h2/descendant::a[@href='/fiction-ex']"));
         book4.click();
-        addtocompare.click();
+        var addtocompare3 = driver.findElement(By.xpath("/descendant::input[@class='button-2 add-to-compare-list-button']"));
+        addtocompare3.click();
 
-        books.click();
+        var booksnew3 = driver.findElement(By.xpath("/descendant::div[@class='header-menu']/descendant::a[@href='/books']"));
+        booksnew3.click();
         var book5 = driver.findElement(By.xpath("/descendant::h2/descendant::a[@href='/health']"));
         book5.click();
-        addtocompare.click();
+        var addtocompare4 = driver.findElement(By.xpath("/descendant::input[@class='button-2 add-to-compare-list-button']"));
+        addtocompare4.click();
 
         var text = driver.findElement(By.xpath("/descendant::tr[@class='product-name']"));
 
